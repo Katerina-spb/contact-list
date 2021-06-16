@@ -1,12 +1,20 @@
 import './Contact.css';
+import { Link } from 'react-router-dom';
 
 function Contact(props) {
   return (
-    <ul>
-      <li>Fist Name: {props.contact.firstName}</li>
-      <li>Last Name: {props.contact.lastName}</li>
-      <li>Phone number: {props.contact.number}</li>
-    </ul>
+    <div>
+      <Link to='/edit'>
+
+        <button>Edit</button>
+      </Link>
+
+      <ul>
+        <li>Fist Name: {props.contact.firstName}</li>
+        <li>Last Name: {props.contact.lastName}</li>
+        <li>Phone number: {props.contact.number}</li>
+      </ul>
+    </div>
   )
 }
 
