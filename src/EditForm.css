@@ -26,11 +26,10 @@ label {
 
 .btns {
   display: flex;
-  align-items: flex-start;
 }
 
 .btns .btn {
-  margin: 10px 10px 0 10px;
+  margin: 10px 10px 0 0;
   padding: 3px 10px;
   background-color: #1A76D1;
   border-radius: 5px;

@@ -36,7 +36,8 @@ function EditForm (props) {
               type="text"
               id = 'first'
               autoComplete = 'off'
-              defaultValue={contact.firstName} />
+              defaultValue={contact.firstName}
+              required />
           </li>
           <li>
           <label>Last Name: </label><br />
@@ -44,7 +45,8 @@ function EditForm (props) {
               type="text"
               id = 'last'
               autoComplete = 'off'
-              defaultValue={contact.lastName} />
+              defaultValue={contact.lastName}
+              required />
           </li>
           <li>
           <label>Phone number: </label><br />
@@ -52,7 +54,8 @@ function EditForm (props) {
               type="text"
               id = 'number'
               autoComplete = 'off'
-              defaultValue={contact.number} />
+              defaultValue={contact.number}
+              required />
           </li>
           <li>
             <label>Email: </label><br />
@@ -60,7 +63,8 @@ function EditForm (props) {
               type="text"
               id = 'email'
               autoComplete = 'off'
-              defaultValue={contact.email} />
+              defaultValue={contact.email}
+              required />
           </li>
         </ul>
         <div className = 'btns'>
