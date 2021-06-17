@@ -40,6 +40,20 @@ var contactsData = [
     lastName: 'Miles',
     number: 7571231217,
     email: 'alice@gmail.com'
+  },
+  {
+    id: 7,
+    firstName: 'Srujana',
+    lastName: 'Koka',
+    number: 7571231288,
+    email: 'srujana@gmail.com'
+  },
+  {
+    id: 8,
+    firstName: 'Marcele',
+    lastName: 'Boov',
+    number: 7571231289,
+    email: 'boovm@gmail.com'
   }
 ];
 

@@ -25,19 +25,21 @@ function EditForm (props) {
   }
 
   return (
-    <div>
+    <div className = 'form-container'>
+      <div className = 'description'>{location.state.description}</div>
       <form className = 'contact-info-form' onSubmit = {(event) => {handleSubmit(event)}}>
         <ul>
           <li>
-            First Name:
+            <label>First Name: </label><br />
             <input
+              label = 'First'
               type="text"
               id = 'first'
               autoComplete = 'off'
               defaultValue={contact.firstName} />
           </li>
           <li>
-            Last Name:
+          <label>Last Name: </label><br />
             <input
               type="text"
               id = 'last'
@@ -45,7 +47,7 @@ function EditForm (props) {
               defaultValue={contact.lastName} />
           </li>
           <li>
-            Phone Number:
+          <label>Phone number: </label><br />
             <input
               type="text"
               id = 'number'
@@ -53,18 +55,21 @@ function EditForm (props) {
               defaultValue={contact.number} />
           </li>
           <li>
-            Email:
+            <label>Email: </label><br />
             <input
               type="text"
               id = 'email'
               autoComplete = 'off'
-             defaultValue={contact.email} />
+              defaultValue={contact.email} />
           </li>
         </ul>
-          <input type="submit" value="Submit"></input>
+        <div className = 'btns'>
+          <input className = 'btn' type="submit" value="Submit"></input>
         <Link to = '/'>
-          <button>Go back to list</button>
+          <button className = 'btn' >Go back to list</button>
         </Link>
+
+        </div>
       </form>
     </div>
   )

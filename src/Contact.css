@@ -1,4 +1,45 @@
+.card-container {
+  display: flex;
+  border-bottom: 1px solid grey;
+  margin: 10px;
+  padding: 10px 0 0 0;
+  background-color: white;
+}
+
 ul {
   list-style: none;
   text-align: left;
+  margin: 0px;
+  padding-left: 10px;
 }
+
+.buttons {
+  display:flex;
+  flex-direction: row-reverse;
+  flex-grow: 1;
+  align-items: flex-start;
+  margin-right: 30px;
+}
+.buttons button {
+  margin: 0 5px;
+  padding: 3px 10px;
+  font-weight: 550;
+  border-radius: 5px;
+
+}
+.delete-btn {
+  background-color: #ff4f4f;
+  color: white;
+}
+.edit-btn {
+  color: black
+}
+
+.expand-button {
+  border: none;
+  background-color: white;
+  margin: 5px;
+  font-weight: 700;
+  color: grey;
+}
+

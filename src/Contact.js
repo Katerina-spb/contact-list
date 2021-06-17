@@ -28,25 +28,28 @@ function Contact(props) {
   }
 
   return (
-    <div>
-      <Link
-        to={{
-          pathname: `/edit`,
-          state: {
-            data: props.contact,
-          },
-        }}>
-        <button>Edit</button>
-      </Link>
-      <button onClick={confirmDelete}>Delete</button>
-
+    <div className = 'card-container'>
       <ul>
         <li>Fist Name: {props.contact.firstName}</li>
         <li>Last Name: {props.contact.lastName}</li>
         <li>Phone number: {props.contact.number}</li>
         {email}
-        <li><button onClick = {handleExpand}>Show more info</button></li>
+        <li><button className = 'expand-button' onClick = {handleExpand}>Show more info</button></li>
       </ul>
+
+      <div className = 'buttons'>
+        <Link
+          to={{
+            pathname: `/edit`,
+            state: {
+              data: props.contact,
+              description: 'Edit existing contact'
+            },
+          }}>
+          <button className = 'edit-btn'>Edit</button>
+        </Link>
+        <button className = 'delete-btn' onClick={confirmDelete}>Delete</button>
+      </div>
     </div>
   )
 }
