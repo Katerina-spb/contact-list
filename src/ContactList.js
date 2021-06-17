@@ -16,7 +16,7 @@ function ContactList(props) {
       </Link>
       {props.contacts.map((contact) => {
         return (
-          <Contact key= {contact.id} contact = {contact} />
+          <Contact key= {contact.id} contact = {contact} delete = {props.delete}/>
         )
       })}
     </div>

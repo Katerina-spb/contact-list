@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import ContactList from './ContactList';
 import EditForm from './EditForm.js';
@@ -11,10 +10,9 @@ function App() {
   const [contacts, setContacts] = useState(contactsData);
 
   const updateData = (updatedInfo) => {
-    let changedContact = contacts.find(element => element.id === updatedInfo.id);
+    let changedContact = contacts.find(contact => contact.id === updatedInfo.id);
     let index = contacts.indexOf(changedContact);
-    var tempArray = contacts.slice();
-
+    let tempArray = contacts.slice();
     //if this is a new contact
     if (index === -1) {
       var newId = contacts.length + 1;
@@ -26,11 +24,19 @@ function App() {
     setContacts(tempArray);
   }
 
+  const deleteContact = (id) => {
+    let contactToDelete = contacts.find(element => element.id === id);
+    let indexToDelete = contacts.indexOf(contactToDelete);
+    let tempArray = contacts.slice();
+    tempArray.splice(indexToDelete, 1);
+    setContacts(tempArray);
+  }
+
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route path='/' exact component={() => <ContactList contacts = {contacts}/>} />
+          <Route path='/' exact component={() => <ContactList contacts = {contacts} delete = {deleteContact} />} />
           <Route path='/edit' component={() => <EditForm updateData = {updateData} />} />
           <Route path='/add' component={() => <EditForm updateData = {updateData} newContact = {true} />} />
         </Switch>
