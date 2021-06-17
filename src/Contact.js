@@ -2,10 +2,16 @@ import './Contact.css';
 import { Link } from 'react-router-dom';
 
 function Contact(props) {
+
   return (
     <div>
-      <Link to='/edit'>
-
+      <Link
+        to={{
+          pathname: `/edit`,
+          state: {
+            data: props.contact,
+          },
+        }}>
         <button>Edit</button>
       </Link>
 
