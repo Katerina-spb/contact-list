@@ -3,7 +3,12 @@ import './EditForm.css';
 
 function EditForm (props) {
   const location = useLocation();
-  const contact = location.state.data;
+  let contact;
+  if (props.newContact) {
+    contact = {id: -1, fistName: '', lastName: '', number: '', email: ''}
+  } else {
+    contact = location.state.data;
+  }
   const updateData = props.updateData;
   let history = useHistory();
 

@@ -14,7 +14,15 @@ function App() {
     let changedContact = contacts.find(element => element.id === updatedInfo.id);
     let index = contacts.indexOf(changedContact);
     var tempArray = contacts.slice();
-    tempArray[index] = updatedInfo;
+
+    //if this is a new contact
+    if (index === -1) {
+      var newId = contacts.length + 1;
+      updatedInfo.id = newId;
+      tempArray.push(updatedInfo)
+    } else {
+      tempArray[index] = updatedInfo;
+    }
     setContacts(tempArray);
   }
 
@@ -22,8 +30,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/" exact component={() => <ContactList contacts = {contacts}/>} />
-          <Route path="/edit" component={() => <EditForm updateData = {updateData} />} />
+          <Route path='/' exact component={() => <ContactList contacts = {contacts}/>} />
+          <Route path='/edit' component={() => <EditForm updateData = {updateData} />} />
+          <Route path='/add' component={() => <EditForm updateData = {updateData} newContact = {true} />} />
         </Switch>
       </Router>
     </div>
