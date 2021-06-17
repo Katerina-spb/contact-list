@@ -8,6 +8,7 @@ import contactsData from './contactsData.js';
 
 function App() {
   const [contacts, setContacts] = useState(contactsData);
+  const [nextNewId, setNextNewId] = useState(contactsData.length + 1);
 
   const updateData = (updatedInfo) => {
     let changedContact = contacts.find(contact => contact.id === updatedInfo.id);
@@ -15,9 +16,9 @@ function App() {
     let tempArray = contacts.slice();
     //if this is a new contact
     if (index === -1) {
-      var newId = contacts.length + 1;
-      updatedInfo.id = newId;
-      tempArray.push(updatedInfo)
+      updatedInfo.id = nextNewId;
+      tempArray.push(updatedInfo);
+      setNextNewId(nextNewId + 1);
     } else {
       tempArray[index] = updatedInfo;
     }
