@@ -23,7 +23,7 @@ function ContactList(props) {
       <div className = 'scroll-list'>
         {props.contacts.map((contact) => {
           return (
-            <Contact key= {contact.id} contact = {contact} delete = {props.delete}/>
+            <Contact key= {contact.id} contact = {contact} />
           )
         })}
       </div>

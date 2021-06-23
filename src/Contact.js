@@ -1,9 +1,11 @@
 import './Contact.css';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import MyContext from './MyContext';
 
 function Contact(props) {
   const [expanded, setExpanded] = useState(false);
+  const handleDelete = React.useContext(MyContext);
 
   const handleExpand = (event) => {
     if (expanded === false) {
@@ -16,7 +18,7 @@ function Contact(props) {
 
   const confirmDelete = () => {
     if (window.confirm(`Are you sure you want to delete the contact for ${props.contact.firstName}?`)) {
-      props.delete(props.contact.id);
+      handleDelete(props.contact.id);
     }
   }
 

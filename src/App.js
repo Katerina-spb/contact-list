@@ -2,8 +2,9 @@ import './App.css';
 import ContactList from './ContactList';
 import EditForm from './EditForm.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import contactsData from './contactsData.js';
+import MyContext from './MyContext';
 
 
 function App() {
@@ -35,13 +36,15 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route path='/' exact component={() => <ContactList contacts = {contacts} delete = {deleteContact} />} />
-          <Route path='/edit' component={() => <EditForm updateData = {updateData} />} />
-          <Route path='/add' component={() => <EditForm updateData = {updateData} newContact = {true} />} />
-        </Switch>
-      </Router>
+      <MyContext.Provider value = {deleteContact}>
+        <Router>
+          <Switch>
+            <Route path='/' exact component={() => <ContactList contacts = {contacts} />} />
+            <Route path='/edit' component={() => <EditForm updateData = {updateData} />} />
+            <Route path='/add' component={() => <EditForm updateData = {updateData} newContact = {true} />} />
+          </Switch>
+        </Router>
+      </MyContext.Provider>
     </div>
   );
 }
